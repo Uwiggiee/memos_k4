@@ -360,7 +360,7 @@ You have to delete any edited configuration files manually.
     ```
 
 4.  **Akses Aplikasi**
-    Buka browser dan akses Memos melalui `http://<IP_ADDRESS_VM>:5230`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
+    Buka browser dan akses Memos melalui `(http://localhost:5230)`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
 
 # Konfigurasi
 
