@@ -7,9 +7,9 @@ Memos adalah sebuah layanan pencatat yang ringan, open-source, dan mengutamakan 
 ![Memos Application Screenshot](https://www.usememos.com/demo.png)
 
 
-## INSTALASI
+# INSTALASI
 
-# System Requirements
+## System Requirements
 Minimum Requirements
 - RAM: 512 MB
 - Storage: 1 GB available space
@@ -71,7 +71,7 @@ Pastikan perangkat lunak berikut sudah terinstal di VM:
 4.  **Akses Aplikasi**
     Buka browser dan akses Memos melalui `http://<IP_ADDRESS_VM>:5230`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
 
-## Konfigurasi
+# Konfigurasi
 
 Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Memos.
 
@@ -84,9 +84,9 @@ Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Me
 * **Editor Markdown**: Sudah menjadi fitur inti dan tidak memerlukan plugin tambahan.
 
 
-## Cara Pemakaian
+# Cara Pemakaian
 
-# Tampilan Aplikasi & Fungsi Utama
+## Tampilan Aplikasi & Fungsi Utama
 Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
 - Membuat Memo: Ketik di kotak input. Gunakan sintaks Markdown untuk format.
 - Menggunakan Tags: Tambahkan tag seperti #proyek atau #ide untuk mengkategorikan.
@@ -94,10 +94,32 @@ Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
 - Mengatur Visibilitas: Setiap memo bisa diatur sebagai Public, Protected, atau Private.
 
 
+# Pembahasan
+## Kelebihan 👍
+
+- Kontrol Penuh Atas Data: Privasi terjamin karena self-hosted.
+- Cepat dan Ringan: Antarmuka responsif dan tidak membebani server.
+- Sederhana dan Fokus: Minimalis, bebas dari distraksi fitur yang tidak perlu.
+- Fleksibel berkat API: Membuka peluang untuk integrasi dan otomatisasi.
+- Instalasi Sangat Mudah: Dengan Docker, proses instalasi menjadi sangat cepat dan tidak rumit.
+
+## Kekurangan 👎
+- Memerlukan Pengetahuan Teknis: Proses instalasi dan maintenance menjadi penghalang bagi pengguna non-teknis.
+- Tidak Ada Aplikasi Mobile Native: Akses di ponsel harus melalui browser (PWA), yang pengalamannya tidak sebaik aplikasi native.
+- Fitur Kolaborasi Terbatas: Lebih dirancang untuk penggunaan personal daripada kerja tim.
 
 
+# Perbandingan dengan Apple Notes
+Jika dibandingkan dengan aplikasi sejenis yang populer seperti Apple Notes (Notes di iPhone), Memos menunjukkan perbedaan filosofi yang mendasar.
+Perbedaan paling fundamental terletak pada platform dan kepemilikan data. Memos adalah aplikasi self-hosted yang berjalan di server pribadi Anda, memberikan kontrol penuh dan privasi 100% atas data. Sebaliknya, Apple Notes terintegrasi erat dengan ekosistem Apple dan menyimpan data pengguna di server iCloud. Dari segi biaya, perangkat lunak Memos gratis namun memerlukan biaya untuk server, sementara Apple Notes gratis sebagai bagian dari pembelian perangkat Apple.
 
+Dari segi pengalaman penggunaan dan organisasi, keduanya juga berbeda. Memos menggunakan sistem tag (#tag) yang fleksibel dan penulisan berbasis Markdown, yang sangat efisien untuk pencatatan cepat dan teknis. Sementara itu, Apple Notes mengandalkan sistem folder yang lebih tradisional seperti file manager dan editor Rich Text (WYSIWYG), yang terasa lebih familiar bagi pengguna umum.
 
+Untuk fitur tambahan, Apple Notes unggul dalam hal kreativitas dan integrasi ekosistem, dengan kemampuan untuk menggambar, memindai dokumen, dan kolaborasi yang solid dengan pengguna Apple lainnya. Keunggulan unik Memos justru terletak pada API-nya, yang membuka pintu bagi otomatisasi dan integrasi dengan alur kerja lain, sesuatu yang tidak dimiliki Apple Notes.
+
+Kesimpulan Perbandingan
+Memos adalah pilihan ideal bagi pengguna teknis yang memprioritaskan kepemilikan data, privasi, dan kesederhanaan. Ini adalah alat yang sempurna untuk power user yang ingin membuat "bank ide" pribadi yang bisa diakses dari mana saja.
+Apple Notes lebih cocok untuk pengguna umum dalam ekosistem Apple yang membutuhkan aplikasi pencatat yang serbaguna, mudah digunakan, dan terintegrasi penuh dengan perangkat mereka.
 
 
 
