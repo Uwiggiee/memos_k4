@@ -365,7 +365,8 @@ You have to delete any edited configuration files manually.
 
 # Cara Pemakaian
 
-![login](./Screenshot%202025-10-17%20202119.png)
+![Halaman Login](./Login.png)
+
 ## Tampilan Aplikasi & Fungsi Utama
 Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
 - Membuat Memo: Ketik di kotak input. Gunakan sintaks Markdown untuk format.
