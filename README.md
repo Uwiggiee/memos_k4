@@ -367,18 +367,19 @@ You have to delete any edited configuration files manually.
 
 ## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+
 ## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Memo_baru.png)
+![Halaman Login](./Halaman.png)
+
 ## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Login.png)
+![Halaman Login](./Edit.png)
+
 ## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Login.png)
+![Halaman Login](./Hapus.png)
+
 ## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Login.png)
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Login.png)
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Login.png)
+![Halaman Login](./Search.png)
+
 
 
 ## Tampilan Aplikasi & Fungsi Utama
