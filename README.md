@@ -362,18 +362,6 @@ You have to delete any edited configuration files manually.
 4.  **Akses Aplikasi**
     Buka browser dan akses Memos melalui `(http://localhost:5230)`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
 
-# Konfigurasi
-
-Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Memos.
-
-* **Batas Upload File**: Jika Anda menggunakan *reverse proxy* seperti Nginx, Anda mungkin perlu mengatur `client_max_body_size` di konfigurasi Nginx untuk mengizinkan unggahan file yang lebih besar.
-* **Login dengan Pihak Ketiga (SSO)**:
-    1.  Buka **Settings > SSO**.
-    2.  Pilih provider (misalnya, Google atau GitHub).
-    3.  Dapatkan **Client ID** dan **Client Secret** dari provider tersebut.
-    4.  Masukkan kredensial ke Memos untuk mengaktifkannya.
-* **Editor Markdown**: Sudah menjadi fitur inti dan tidak memerlukan plugin tambahan.
-
 
 # Cara Pemakaian
 
