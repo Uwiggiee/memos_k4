@@ -4,40 +4,27 @@
 
 Memos adalah sebuah layanan pencatat yang ringan, open-source, dan mengutamakan privasi (privacy-first). Aplikasi ini dirancang untuk menjadi tempat bagi Anda mencatat ide dan pemikiran secara cepat dan efisien. Konsepnya mirip seperti memiliki Twitter atau media sosial pribadi, di mana setiap catatan ("memo") ditampilkan dalam sebuah alur waktu (timeline).
 
-<div align="center">
-
-[![Home Page](https://img.shields.io/badge/Home-www.usememos.com-blue)](https://www.usememos.com)
-[![Documentation](https://img.shields.io/badge/Docs-Available-green)](https://www.usememos.com/docs)
-[![Live Demo](https://img.shields.io/badge/Demo-Try%20Now-orange)](https://demo.usememos.com/)
-[![Blog](https://img.shields.io/badge/Blog-Read%20More-lightblue)](https://www.usememos.com/blog)
-
-[![Docker Pulls](https://img.shields.io/docker/pulls/neosmemo/memos.svg)](https://hub.docker.com/r/neosmemo/memos)
-[![Docker Image Size](https://img.shields.io/docker/image-size/neosmemo/memos?sort=semver)](https://hub.docker.com/r/neosmemo/memos)
-[![Discord](https://img.shields.io/badge/discord-chat-5865f2?logo=discord&logoColor=f5f5f5)](https://discord.gg/tfPJa4UmAv)
-
-</div>
-
 ![Memos Application Screenshot](https://www.usememos.com/demo.png)
 
-<!-- Premium Sponsors -->
-<!--
-<div align="center">
-  <p><em>Support Memos development and get your brand featured here</em></p>
-  <a href="https://sponsor-website.com" target="_blank">
-    <img src="https://sponsor-logo-url.com/logo.png" alt="Sponsor Name" height="60" style="margin: 10px;">
-  </a>
-</div>
--->
 
-## Table of Contents
+## INSTALASI
 
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Quick Start](#quick-start)
-- [Sponsors](#sponsors)
-- [Contributing](#contributing)
-- [Star History](#star-history)
+# System Requirements
+Minimum Requirements
+- RAM: 512 MB
+- Storage: 1 GB available space
+- CPU: Any modern x86_64 or ARM64 processor
+
+Supported Platforms
+- Linux (x86_64, ARM64)
+- macOS (Intel, Apple Silicon)
+- Windows (x86_64)
+- Docker (all platforms)
+
+Database Support
+- SQLite (default) - Perfect for single-user instances
+- PostgreSQL - Recommended for multi-user production deployments
+- MySQL/MariaDB - Alternative for existing MySQL infrastructure
 
 ## Overview
 
