@@ -35,9 +35,9 @@ Pastikan perangkat lunak berikut sudah terinstal di VM:
 
 # Langkah Instalasi
 ## install docker
+
+
 Install Docker Engine on Ubuntu
-
-
 To get started with Docker Engine on Ubuntu, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).
@@ -323,6 +323,8 @@ You have to delete any edited configuration files manually.
 
 - Continue to [Post-installation steps for Linux](linux-postinstall.md).
 
+
+## Instalasi memos
 
 1.  **Buat Direktori Proyek**
     Buat folder untuk menyimpan file konfigurasi Memos, lalu masuk ke direktori tersebut.
