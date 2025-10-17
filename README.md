@@ -364,23 +364,25 @@ You have to delete any edited configuration files manually.
 
 
 # Cara Pemakaian
-
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
+1. Login
 ![Halaman Login](./Login.png)
+Pada halaman ini menampilkan tampilan login untuk pengguna agar dapat mengakses fitur-fitur secara penuh, pengguna melakukan autentikasi dengan memasukkan username dan password yang telah ditentukan.
 
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
-![Halaman Login](./Halaman.png)
+2. Halaman Depan
+![Halaman Depan](./Halaman.png)
+Tampilan utama pada aplikasi memberikan akses ke pengguna untuk mencoba fitur-fitur utama.
 
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
+3. Membuat Catatan 
 ![Halaman Login](./Edit.png)
+Di sini dapat bisa menuliskan catatan apapun dan catatan yang di save akan langsung muncul di bagian atas.
 
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
+4. Mengelola Memo yang sudah ada
 ![Halaman Login](./Hapus.png)
+Memo dapat di edit, dihapus, dan di pin untuk mengontrol memo yang sudah ada.
 
-## LU TULIS KETERANGANNYA DISINI YA PIKRI
+5. Mencari memo
 ![Halaman Login](./Search.png)
-
-
+Ada fitur untuk mencari memo, misalkan memo sudah banyak menumpuk, di sebelah kanan ada fitur pencarian
 
 ## Tampilan Aplikasi & Fungsi Utama
 Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
