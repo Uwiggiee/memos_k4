@@ -84,6 +84,14 @@ Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Me
 * **Editor Markdown**: Sudah menjadi fitur inti dan tidak memerlukan plugin tambahan.
 
 
+## Cara Pemakaian
+
+# Tampilan Aplikasi & Fungsi Utama
+Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
+- Membuat Memo: Ketik di kotak input. Gunakan sintaks Markdown untuk format.
+- Menggunakan Tags: Tambahkan tag seperti #proyek atau #ide untuk mengkategorikan.
+- Membuat Checklist: Gunakan sintaks - [ ] untuk item tugas yang belum selesai dan - [x] untuk yang sudah.
+- Mengatur Visibilitas: Setiap memo bisa diatur sebagai Public, Protected, atau Private.
 
 
 
@@ -98,40 +106,9 @@ Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Me
 
 
 
-Memos is a lightweight, self-hosted alternative to cloud-based note-taking services. Built with privacy and performance in mind, it offers a comprehensive platform for personal knowledge management without compromising data ownership or security.
 
-## Key Features
 
-### Privacy & Security
 
-- **Complete Data Ownership** — All data stored locally in your chosen database
-- **Self-Hosted Architecture** — Full control over infrastructure and access policies
-- **No External Dependencies** — Zero third-party services or cloud connections required
-
-### Content Creation
-
-- **Instant Save** — Streamlined plain text input with automatic persistence
-- **Rich Markdown Support** — Full Markdown rendering with syntax highlighting
-- **Media Integration** — Native support for images, links, and embedded content
-
-### Performance & Technology
-
-- **High-Performance Backend** — Built with Go for optimal resource utilization
-- **Modern React Frontend** — Responsive, intuitive user interface
-- **Lightweight Deployment** — Minimal system requirements, maximum efficiency
-- **Cross-Platform** — Linux, macOS, Windows, and containerized environments
-
-### Customization
-
-- **Configurable Interface** — Custom branding, themes, and UI elements
-- **API-First Design** — RESTful API for seamless third-party integrations
-- **Multi-Database Support** — SQLite, PostgreSQL, and MySQL compatibility
-
-### Cost-Effective
-
-- **Open Source (MIT)** — Full source code availability with permissive licensing
-- **Zero Subscription Fees** — No usage limits, premium tiers, or hidden costs
-- **Community-Driven** — Transparent development with active community support
 
 ## Quick Start
 
@@ -150,35 +127,7 @@ Access Memos at `http://localhost:5230` and complete the initial setup.
 
 **Alternative methods**: For Docker Compose, binary installation, or building from source, see our [Installation Guide](https://www.usememos.com/docs/installation).
 
-**Pro Tip**: The data directory stores all your notes, uploads, and settings. Include it in your backup strategy!
 
-## Sponsors
-
-Memos is made possible by the generous support of our sponsors. Their contributions help ensure the project's continued development, maintenance, and growth.
-
-<a href="https://github.com/yourselfhosted" target="_blank"><img src="https://avatars.githubusercontent.com/u/140182318?v=4" alt="yourselfhosted" height="60" /></a>
-<a href="https://github.com/fixermark" target="_blank"><img src="https://avatars.githubusercontent.com/u/169982?v=4" alt="fixermark" height="60" /></a>
-<a href="https://github.com/alik-agaev" target="_blank"><img src="https://avatars.githubusercontent.com/u/2662697?v=4" alt="alik-agaev" height="60" /></a>
-
-<p><strong>Every contribution, no matter the size, makes a difference!</strong></p>
-
-<a href="https://github.com/sponsors/usememos" target="_blank">
-  <img src="https://img.shields.io/badge/Sponsor-❤️-red?style=for-the-badge" alt="Sponsor Memos">
-</a>
-
-## Contributing
-
-Memos welcomes contributions from developers, designers, and users worldwide. We value quality, innovation, and community feedback.
-
-**Ways to Contribute:**
-
-- Code contributions (bug fixes, features, performance improvements)
-- Documentation and user guides
-- Testing and bug reporting
-- Localization and translation
-- Community support
-
-**Get Started**: [Contributing Guide](https://github.com/usememos/memos/blob/main/CONTRIBUTING.md) • [Code of Conduct](https://github.com/usememos/memos/blob/main/CODE_OF_CONDUCT.md)
 
 ## Star History
 
