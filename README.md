@@ -365,12 +365,19 @@ You have to delete any edited configuration files manually.
 
 # Cara Pemakaian
 
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Memo_baru.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
+## LU TULIS KETERANGANNYA DISINI YA PIKRI
 ![Halaman Login](./Login.png)
 
 
