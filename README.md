@@ -366,6 +366,13 @@ You have to delete any edited configuration files manually.
 # Cara Pemakaian
 
 ![Halaman Login](./Login.png)
+![Halaman Login](./Memo_baru.png)
+![Halaman Login](./Login.png)
+![Halaman Login](./Login.png)
+![Halaman Login](./Login.png)
+![Halaman Login](./Login.png)
+![Halaman Login](./Login.png)
+
 
 ## Tampilan Aplikasi & Fungsi Utama
 Antarmuka Memos sangat minimalis, berfokus pada kotak input dan timeline.
