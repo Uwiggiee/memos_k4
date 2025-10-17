@@ -122,35 +122,3 @@ Memos adalah pilihan ideal bagi pengguna teknis yang memprioritaskan kepemilikan
 Apple Notes lebih cocok untuk pengguna umum dalam ekosistem Apple yang membutuhkan aplikasi pencatat yang serbaguna, mudah digunakan, dan terintegrasi penuh dengan perangkat mereka.
 
 
-
-
-
-
-
-
-
-
-
-
-## Quick Start
-
-Get Memos running in under 1 minutes with Docker:
-
-```bash
-docker run -d \
-  --name memos \
-  --restart unless-stopped \
-  -p 5230:5230 \
-  -v ~/.memos:/var/opt/memos \
-  neosmemo/memos:stable
-```
-
-Access Memos at `http://localhost:5230` and complete the initial setup.
-
-**Alternative methods**: For Docker Compose, binary installation, or building from source, see our [Installation Guide](https://www.usememos.com/docs/installation).
-
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=usememos/memos&type=Date)](https://star-history.com/#usememos/memos&Date)
