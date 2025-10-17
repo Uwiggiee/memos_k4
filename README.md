@@ -26,7 +26,77 @@ Database Support
 - PostgreSQL - Recommended for multi-user production deployments
 - MySQL/MariaDB - Alternative for existing MySQL infrastructure
 
-## Overview
+Prasyarat
+
+Pastikan perangkat lunak berikut sudah terinstal di VM:
+1.  **Docker**: Platform untuk menjalankan aplikasi dalam kontainer.
+2.  **Docker Compose**: Alat untuk mendefinisikan dan menjalankan aplikasi Docker.
+3.  **Akses Terminal/CLI**: Akses ke antarmuka baris perintah di VM Anda.
+
+# Langkah Instalasi
+
+1.  **Buat Direktori Proyek**
+    Buat folder untuk menyimpan file konfigurasi Memos, lalu masuk ke direktori tersebut.
+    ```bash
+    mkdir memos-app
+    cd memos-app
+    ```
+
+2.  **Buat File `docker-compose.yml`**
+    Buat file konfigurasi menggunakan editor teks seperti `nano`.
+    ```bash
+    nano docker-compose.yml
+    ```
+    Salin dan tempel konten berikut ke dalam file:
+    ```yaml
+    version: "3.0"
+    services:
+      memos:
+        image: neosmemo/memos:latest
+        container_name: memos
+        volumes:
+          - ~/.memos/:/var/opt/memos
+        ports:
+          - "5230:5230"
+        restart: unless-stopped
+    ```
+    > **Penting:** Bagian `volumes` memetakan direktori `~/.memos/` di VM Anda ke dalam kontainer. Ini memastikan data Anda (database, gambar, dll.) tetap aman meskipun kontainer dihapus.
+
+3.  **Jalankan Aplikasi**
+    Simpan file, lalu jalankan Memos di latar belakang (`-d`).
+    ```bash
+    docker-compose up -d
+    ```
+
+4.  **Akses Aplikasi**
+    Buka browser dan akses Memos melalui `http://<IP_ADDRESS_VM>:5230`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
+
+## Konfigurasi
+
+Konfigurasi lanjutan dapat diakses melalui menu **Settings** di antarmuka web Memos.
+
+* **Batas Upload File**: Jika Anda menggunakan *reverse proxy* seperti Nginx, Anda mungkin perlu mengatur `client_max_body_size` di konfigurasi Nginx untuk mengizinkan unggahan file yang lebih besar.
+* **Login dengan Pihak Ketiga (SSO)**:
+    1.  Buka **Settings > SSO**.
+    2.  Pilih provider (misalnya, Google atau GitHub).
+    3.  Dapatkan **Client ID** dan **Client Secret** dari provider tersebut.
+    4.  Masukkan kredensial ke Memos untuk mengaktifkannya.
+* **Editor Markdown**: Sudah menjadi fitur inti dan tidak memerlukan plugin tambahan.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Memos is a lightweight, self-hosted alternative to cloud-based note-taking services. Built with privacy and performance in mind, it offers a comprehensive platform for personal knowledge management without compromising data ownership or security.
 
