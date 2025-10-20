@@ -394,7 +394,7 @@ Sebelum memulai, pastikan Anda memiliki:
     * Buka portal Azure dan buat **Azure Virtual Machine** baru.
     * **OS Image:** `Ubuntu Server 22.04 LTS`
     * **Size (Ukuran):** `B1s` (atau ukuran lain yang memenuhi syarat *free tier*).
-    * **Authentication (Otentikasi):** Pilih **`SSH public key`** dan tempelkan (paste) isi dari file `id_rsa.pub` Anda.
+    * **Authentication (Otentikasi):** Pilih **`SSH public key`** dan tempelkan (paste) isi dari file `id_rsa.pub`.
     * **Username:** Tentukan sebuah username (contoh: `azureuser`).
 
 2.  **Konfigurasi Jaringan (Networking):**
@@ -406,14 +406,14 @@ Sebelum memulai, pastikan Anda memiliki:
 
 3.  **Deploy VM:**
     * Tinjau kembali pengaturan Anda dan klik **Create**.
-    * Setelah selesai, catat **Public IP Address** dari VM Anda yang tertera di halaman *overview*.
+    * Setelah selesai, catat **Public IP Address** dari VM yang tertera di halaman *overview*.
 
 ---
 
 ### 🛠️ Langkah 2: Pengaturan Lingkungan Server
 
 1.  **Hubungkan via SSH:**
-    Hubungkan ke VM baru Anda dari terminal lokal. Ganti `username` dan `ip_publik_anda` dengan detail milik Anda.
+    Hubungkan ke VM baru Anda dari terminal lokal. Ganti `username` dan `ip_publik` dengan detail milik. dalam hal ini username kami Ludwig dan ip nya 20.189.78.189
     ```bash
     ssh username@ip_publik
     ```
@@ -427,12 +427,12 @@ Sebelum memulai, pastikan Anda memiliki:
     # Install Docker dan Docker Compose
     sudo apt install docker.io docker-compose -y
 
-    # Tambahkan user Anda ke grup docker agar tidak perlu 'sudo'
+    # Tambahkan user ke grup docker agar tidak perlu 'sudo'
     sudo usermod -aG docker $USER
 
     # PENTING: Keluar dan masuk kembali agar perubahan grup efektif
     exit
-    # ssh username@ip_publik_anda (Hubungkan kembali di sini)
+    # ssh username@ip_publik (Hubungkan kembali di sini)
 
     # Install Nginx
     sudo apt install nginx -y
@@ -477,7 +477,7 @@ Sebelum memulai, pastikan Anda memiliki:
     ```bash
     docker ps
     ```
-    Anda akan melihat `memos` terdaftar dengan status `Up`.
+    Disini akan terlihat `memos` terdaftar dengan status `Up`.
 
 ---
 
@@ -487,11 +487,11 @@ Sebelum memulai, pastikan Anda memiliki:
     ```bash
     sudo nano /etc/nginx/sites-available/memos
     ```
-    Tempelkan konfigurasi berikut, ganti `ip_publik` dengan IP publik VM Anda.
+    Tempelkan konfigurasi berikut, ganti `ip_publik` dengan IP publik VM tadi.
     ```nginx
     server {
         listen 80;
-        server_name ip_publik_anda;
+        server_name ip_publik;
 
         location / {
             proxy_pass http://localhost:5230;
@@ -525,7 +525,7 @@ Sebelum memulai, pastikan Anda memiliki:
 
 ### 🎉 Langkah 5: Mengakses Aplikasi Memos
 
-Selesai! Buka browser web Anda dan kunjungi alamat IP publik VM Anda.
+Selesai! Buka browser web dan kunjungi alamat IP publik VM.
 
 ```
 http://ip_publik
