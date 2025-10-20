@@ -362,6 +362,176 @@ You have to delete any edited configuration files manually.
 4.  **Akses Aplikasi**
     Buka browser dan akses Memos melalui `(http://localhost:5230)`. Anda akan diminta untuk membuat akun admin saat pertama kali masuk.
 
+# Hosting Memos di Azure dengan Docker dan Nginx
+
+Panduan ini menyediakan proses langkah demi langkah untuk melakukan *hosting* aplikasi Memos pada Azure Virtual Machine menggunakan Docker untuk kontainerisasi dan Nginx sebagai *reverse proxy*.
+
+## 🚀 Daftar Isi
+
+1.  [Prasyarat](#-prasyarat)
+2.  [Langkah 1: Pengaturan Azure Virtual Machine](#-langkah-1-pengaturan-azure-virtual-machine)
+3.  [Langkah 2: Pengaturan Lingkungan Server](#-langkah-2-pengaturan-lingkungan-server)
+4.  [Langkah 3: Deploy Memos dengan Docker](#-langkah-3-deploy-memos-dengan-docker)
+5.  [Langkah 4: Konfigurasi Nginx sebagai Reverse Proxy](#-langkah-4-konfigurasi-nginx-sebagai-reverse-proxy)
+6.  [Langkah 5: Mengakses Aplikasi Memos](#-langkah-5-mengakses-aplikasi-memos)
+
+---
+
+### 📋 Prasyarat
+
+Sebelum memulai, pastikan Anda memiliki:
+* Langganan **Azure for Students** yang aktif (atau langganan Azure lainnya).
+* **Kunci SSH** yang sudah dibuat di komputer lokal Anda. Jika belum punya, buat dengan perintah:
+    ```bash
+    ssh-keygen -t rsa -b 2048
+    ```
+
+---
+
+### 🖥️ Langkah 1: Pengaturan Azure Virtual Machine
+
+1.  **Buat Virtual Machine (VM):**
+    * Buka portal Azure dan buat **Azure Virtual Machine** baru.
+    * **OS Image:** `Ubuntu Server 22.04 LTS`
+    * **Size (Ukuran):** `B1s` (atau ukuran lain yang memenuhi syarat *free tier*).
+    * **Authentication (Otentikasi):** Pilih **`SSH public key`** dan tempelkan (paste) isi dari file `id_rsa.pub` Anda.
+    * **Username:** Tentukan sebuah username (contoh: `azureuser`).
+
+2.  **Konfigurasi Jaringan (Networking):**
+    * Saat proses pembuatan, buka tab **Networking**.
+    * Di bawah "Public inbound ports", centang kotak untuk **Mengizinkan (Allow)** trafik pada port:
+        * **SSH (22)**
+        * **HTTP (80)**
+        * **HTTPS (443)**
+
+3.  **Deploy VM:**
+    * Tinjau kembali pengaturan Anda dan klik **Create**.
+    * Setelah selesai, catat **Public IP Address** dari VM Anda yang tertera di halaman *overview*.
+
+---
+
+### 🛠️ Langkah 2: Pengaturan Lingkungan Server
+
+1.  **Hubungkan via SSH:**
+    Hubungkan ke VM baru Anda dari terminal lokal. Ganti `username` dan `ip_publik_anda` dengan detail milik Anda.
+    ```bash
+    ssh username@ip_publik
+    ```
+
+2.  **Install Software Penting:**
+    Jalankan perintah berikut di dalam VM untuk menginstall Docker, Docker Compose, dan Nginx.
+    ```bash
+    # Perbarui daftar paket
+    sudo apt update && sudo apt upgrade -y
+
+    # Install Docker dan Docker Compose
+    sudo apt install docker.io docker-compose -y
+
+    # Tambahkan user Anda ke grup docker agar tidak perlu 'sudo'
+    sudo usermod -aG docker $USER
+
+    # PENTING: Keluar dan masuk kembali agar perubahan grup efektif
+    exit
+    # ssh username@ip_publik_anda (Hubungkan kembali di sini)
+
+    # Install Nginx
+    sudo apt install nginx -y
+    ```
+
+---
+
+### 🐳 Langkah 3: Deploy Memos dengan Docker
+
+1.  **Buat Direktori:**
+    ```bash
+    mkdir ~/memos && cd ~/memos
+    ```
+
+2.  **Buat `docker-compose.yml`:**
+    Buat sebuah file konfigurasi untuk kontainer Memos.
+    ```bash
+    nano docker-compose.yml
+    ```
+    Tempelkan konten berikut ke dalam editor:
+    ```yaml
+    version: "3.0"
+    services:
+      memos:
+        image: neosmemo/memos:latest
+        container_name: memos
+        volumes:
+          - ~/.memos/:/var/opt/memos
+        ports:
+          - "5230:5230"
+    ```
+    Simpan dan keluar dengan menekan `Ctrl+X`, lalu `Y`, lalu `Enter`.
+
+3.  **Jalankan Kontainer:**
+    Jalankan Docker Compose dalam mode *detached* (`-d`).
+    ```bash
+    docker-compose up -d
+    ```
+
+4.  **Verifikasi:**
+    Periksa apakah kontainer berjalan dengan sukses.
+    ```bash
+    docker ps
+    ```
+    Anda akan melihat `memos` terdaftar dengan status `Up`.
+
+---
+
+### 🌐 Langkah 4: Konfigurasi Nginx sebagai Reverse Proxy
+
+1.  **Buat File Konfigurasi Nginx:**
+    ```bash
+    sudo nano /etc/nginx/sites-available/memos
+    ```
+    Tempelkan konfigurasi berikut, ganti `ip_publik` dengan IP publik VM Anda.
+    ```nginx
+    server {
+        listen 80;
+        server_name ip_publik_anda;
+
+        location / {
+            proxy_pass http://localhost:5230;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+    }
+    ```
+    Simpan dan keluar dari editor.
+
+2.  **Aktifkan Konfigurasi:**
+    Tautkan file konfigurasi baru ke direktori `sites-enabled` dan hapus konfigurasi default.
+    ```bash
+    sudo ln -s /etc/nginx/sites-available/memos /etc/nginx/sites-enabled/
+    sudo rm /etc/nginx/sites-enabled/default
+    ```
+
+3.  **Tes dan Restart Nginx:**
+    Periksa apakah ada error sintaks dan terapkan perubahan dengan me-restart Nginx.
+    ```bash
+    sudo nginx -t
+    sudo systemctl restart nginx
+    ```
+
+---
+
+### 🎉 Langkah 5: Mengakses Aplikasi Memos
+
+Selesai! Buka browser web Anda dan kunjungi alamat IP publik VM Anda.
+
+```
+http://ip_publik
+```
+
+
 
 # Cara Pemakaian
 1. Login
